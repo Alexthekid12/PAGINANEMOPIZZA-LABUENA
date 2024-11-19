@@ -9,10 +9,10 @@ const app = express();
 async function connectDatabase() {
     try {
         const connection = await mysql.createConnection({
-            host: process.env.MYSQL_HOST,
-            user: process.env.MYSQL_USER,
-            password: process.env.MYSQL_PASSWORD,
-            database: process.env.MYSQL_DATABASE,
+            host: "3.144.99.214",
+            user: "root",
+            password: "Alexander12",
+            database: "pizza"
         });
         console.log('Database connected');
         return connection;
