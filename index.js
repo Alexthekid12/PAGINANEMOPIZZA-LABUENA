@@ -6,35 +6,28 @@ dotenv.config();
 
 const app = express();
 
-async function connectDatabase() {
-    try {
-        const connection = await mysql.createConnection({
+const connection = await mysql.createConnection({
             host: "3.144.99.214",
             user: "root",
             password: "Alexander12",
             database: "pizza"
-        });
-        console.log('Database connected');
-        return connection;
-    } catch (err) {
-        console.error('Database connection failed:', err);
-        process.exit(1); // Detiene el servidor si no se conecta
-    }
-}
+ });
+  
+
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-(async () => {
-   
-   // const conexion = await connectDatabase();
 
-    app.listen(process.env.PORT, process.env.HOST, () => {
-        console.log('Server is running on PORT ', process.env.PORT);
-    });
-})();
+connection.connect(( err ) => {
+    if( err ) throw err;
+    console.log('Conectado a la base de datos')
+})
 
-app.post('3.144.99.214', (req, res) => {
+    
+
+
+app.post('/formulario', (req, res) => {
     const nombre = req.body.nombre;
     const telefono = req.body.telefono;
     const direccion = req.body.direccion;
@@ -46,6 +39,11 @@ app.post('3.144.99.214', (req, res) => {
     connection.query(query, [nombre,telefono,direccion,no_tarjeta,expira,cvv], (err, result) => {
     if (err) throw err; // Si hay un error, lanza una excepción.
     res.send('Dato insertado correctamente en la base de datos.'); // Responde al cliente confirmando la inserción.
-    
+        
+    });
 });
+
+
+app.listen(process.env.PORT, process.env.HOST, () => {
+    console.log('Server is running on PORT ', process.env.PORT);
 });
