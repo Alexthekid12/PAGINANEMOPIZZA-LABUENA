@@ -256,17 +256,16 @@ footer .logo-2 {
 
 /* boton de guardar pedido */
 
-.btn-save-order{
-   
-    padding: 15px 35px;
-    border: 2px solid #a15959;
-    color:#f4f1f1;
-    background-color: #575856;
-    font-weight: 300px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-right: 20px;
-    border-radius: 15px;
-    display: block;
-    margin: 0 auto;
+button {
+    background-color: hsl(0, 0%, 0%); /* Color de fondo verde */
+    color: #ffffff; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin bordes */
+    border-radius: 5px; /* Esquinas redondeadas */
+    font-size: 16px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambia el cursor a mano */
+    transition: background-color 0.3s; /* Transición al pasar el mouse */
+}
+button:hover {
+    background-color: #37ff00; /* Color al pasar el mouse */
 }

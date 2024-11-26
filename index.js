@@ -33,3 +33,19 @@ app.use(bodyParser.urlencoded({ extended: true }));
         console.log('Server is running on PORT ', process.env.PORT);
     });
 })();
+
+app.post('3.144.99.214', (req, res) => {
+    const nombre = req.body.nombre;
+    const telefono = req.body.telefono;
+    const direccion = req.body.direccion;
+    const no_tarjeta = req.body.no_tarjeta;
+    const expira = req.body.expira;
+    const cvv = req.body.cvv;    
+    
+    const query = 'INSERT INTO products (,nombre,telefono,direccion,no_tarjeta,expira,cvv) VALUES (?,?)';
+    connection.query(query, [nombre,telefono,direccion,no_tarjeta,expira,cvv], (err, result) => {
+    if (err) throw err; // Si hay un error, lanza una excepción.
+    res.send('Dato insertado correctamente en la base de datos.'); // Responde al cliente confirmando la inserción.
+    
+});
+});

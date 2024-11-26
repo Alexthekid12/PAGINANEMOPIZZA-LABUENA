@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forma de pago</title>
+    <link rel="stylesheet" href="style.css">
+ <style>
+
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 15px; /* Redondeo del borde */
+            width: 200px;
+        }
+        img {
+            position: absolute;
+            left: 10%; /* Borde derecho */
+            top: 10%; /* Centrar verticalmente */
+            transform: translateY(-50%); /* Ajuste de centro */
+            width: 20px; /* Ajusta el tamaño de la imagen */
+            height: auto;
+            width: 100px; /* Ajusta el tamaño */
+            height: 100px; /* Igual que el ancho para mantener proporción */
+            border-radius: 50%; /* Hace la imagen redonda */
+            border: 10px solid #0c0000;
+            object-fit: cover; /* Asegura que la imagen llena el contenedor */
+       
+        }
+        button {
+            background-color: hsl(0, 0%, 0%); /* Color de fondo verde */
+            color: #ffffff; /* Color del texto */
+            padding: 10px 20px; /* Espaciado interno */
+            border: none; /* Sin bordes */
+            border-radius: 5px; /* Esquinas redondeadas */
+            font-size: 16px; /* Tamaño de fuente */
+            cursor: pointer; /* Cambia el cursor a mano */
+            transition: background-color 0.3s; /* Transición al pasar el mouse */
+        }
+        button:hover {
+            background-color: hsl(0, 100%, 73%); /* Color al pasar el mouse */
+        }
+        input[type="submit"] {
+            background-color: #000000; /* color del fondo del boton submit*/
+            color: #ffffff; /* Texto blanco */
+            padding: 10px 15px; /* Espaciado interno */
+            border: none; /* Sin borde */
+            border-radius: 5px; /* Esquinas redondeadas */
+            font-size: 16px; /* Tamaño de fuente */
+            cursor: pointer; /* Cambia el cursor a mano */
+            transition: background-color 0.3s ease; /* Transición suave */
+        }
+        input[type="submit"]:hover {
+            background-color: hsl(123, 100%, 49%); /* Verde más oscuro al pasar el mouse */
+        }
+    </style>
+</head>
+
+<body>
+
+   <form action="/formulario" method="post">
+    <div style="text-align: center;">
+        <p style="color: #f8f6f2;">COMPLETA LA INFORMACION DE PAGO</p>
+        <label for="nombre"> <p style="color: #f8f6f2;">NOMBRE:</p></label>
+        <input id="nombre" name="nombre"/>
+        
+        <br>
+        <label for="telefono"><p style="color: #f8f6f2;">TELEFONO:</p></label>
+        <input id="telefono" name="TELEFONO"/>
+        
+        <br>
+        <label for="direccion"><p style="color: #f8f6f2;">DIRECCION:</p></label>
+        <input id="direccion" name="direccion"/>
+        
+        <br>
+        <label for="tarjeta"> <p style="color: #f8f6f2;">NO°TARJETA:</p></label>
+        <input id="tarjeta" name="tarjeta"/>
+        <br>
+        <label for="fecha"><p style="color: #f8f6f2;">EXPIRA:</p></label>
+        <input type="fecha" id="fecha" name="fecha">
+        <br>
+        <label for="cvv"><p style="color: #f8f6f2;">CVV:</p></label>
+        <input cols="3" rows="1" id="cvv" type="password" name="cvv"/>
+        <br>
+        <br>
+        <br>
+        <input type="submit"/>
+        
+    </div>
+   
+    
+</form>
+<div style="text-align: right;">
+    <img src="logopizza.jpg">
+</div>
+<button onclick="location.href='http://3.141.39.217/'">REGRESAR</button>
+
+</body>
+
+</html>
