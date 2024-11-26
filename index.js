@@ -6,7 +6,7 @@ dotenv.config();
 
 const app = express();
 
-const connection = await mysql.createConnection({
+const connection = mysql.createConnection({
             host: "3.144.99.214",
             user: "root",
             password: "Alexander12",
