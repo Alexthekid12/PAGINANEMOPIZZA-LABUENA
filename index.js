@@ -1,5 +1,5 @@
 const express = require('express');
-const mysql = require('mysql2/promise');  // Usamos promesas
+const mysql = require('mysql2');  // Usamos promesas
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 dotenv.config();
