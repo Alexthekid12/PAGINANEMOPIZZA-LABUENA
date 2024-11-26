@@ -35,7 +35,7 @@ app.post('/formulario', (req, res) => {
     const expira = req.body.expira;
     const cvv = req.body.cvv;    
     
-    const query = 'INSERT INTO products (,nombre,telefono,direccion,no_tarjeta,expira,cvv) VALUES (?,?)';
+    const query = 'INSERT INTO products (nombre,telefono,direccion,no_tarjeta,expira,cvv) VALUES (?,?,?,?,?,?)';
     connection.query(query, [nombre,telefono,direccion,no_tarjeta,expira,cvv], (err, result) => {
     if (err) throw err; // Si hay un error, lanza una excepción.
     res.send('Dato insertado correctamente en la base de datos.'); // Responde al cliente confirmando la inserción.
