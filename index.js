@@ -34,7 +34,7 @@ app.post('/formulario', (req, res) => {
     const no_tarjeta = req.body.no_tarjeta;
     const expira = req.body.expira;
     const cvv = req.body.cvv;    
-    
+    //estructuras query if
     const query = 'INSERT INTO PAGO (NOMBRE,TELEFONO,DIRECCION,NO_TARJETA,EXPIRA,CVV) VALUES (?,?,?,?,?,?)';
     connection.query(query, [nombre,telefono,direccion,no_tarjeta,expira,cvv], (err, result) => {
     if (err) throw err; // Si hay un error, lanza una excepción.
